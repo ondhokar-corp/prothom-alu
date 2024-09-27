@@ -1,0 +1,36 @@
+<section class="post-list">
+  <h4 class="post-list-heading">
+    {%- if include.more_link -%}
+    <a class="category" href="{{ include.more_link | relative_url }}">{{ include.list_title | default: "Posts" }}</a>
+    {%- else -%}
+    {{ include.list_title | default: "Posts" }}
+    {%- endif -%}
+  </h4>
+
+  {% assign lv = include.list_level | default: 0 %}
+  {% assign cls = "post-list-container-" | append: lv %}
+  <div class="{{ cls }}">
+    {%- assign posts = include.posts | default: site.posts -%}
+    {%- assign post_limit = include.post_limit | default: site.pagination.per_page -%}
+    {%- assign limited_posts = posts | slice: 0, post_limit -%} <!-- Limit posts to the specified number -->
+    {%- for post in limited_posts -%}
+    <article class="news">
+      <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
+      {%- if post.cover.image -%}
+
+      <img src="{{ post.cover.image }}" alt="{{ post.cover.alt }}" />
+
+    {%- endif -%}
+
+    <h5>
+    <a class="post-link" href="{{ post.url | relative_url }}">
+      {{ post.title | escape }}
+    </a>
+</h5>
+    {%- if include.show_excerpts or site.show_excerpts -%}
+    {{ post.excerpt }}
+    {%- endif -%}
+  </article>
+  {%- endfor -%}
+</div>
+</section>

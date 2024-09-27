@@ -1,0 +1,91 @@
+---
+layout: default_fluid
+---
+
+<div class="home">
+  {%- if page.title -%}
+  <h2 class="page-heading">{{ page.title }}</h2>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 %}
+  <!-- Here will be featured section -->
+  {%- assign posts = include.posts | default: site.posts -%}
+  {%- assign limited_posts = posts | slice: 0, 3 -%}
+
+  {% assign highest_weight_post = site.posts | first %}
+  {% assign max_weight = highest_weight_post.weight | default: 0 %}
+
+  {% for post in site.posts %}
+  {% if post.weight and post.weight > max_weight %}
+  {% assign highest_weight_post = post %}
+  {% assign max_weight = post.weight %}
+  {% endif %}
+  {% endfor %}
+
+
+
+
+  <section class="hero">
+    <article class="hero__featured">
+      
+      {%- if highest_weight_post.cover.show_in_list -%}
+      <img src="{{ highest_weight_post.cover.image }}" alt="{{ highest_weight_post.cover.alt }}" />
+    {%- endif -%}
+    <div>
+      <h4><span>ফিচার্ড</span> <a href="{{ highest_weight_post.url | relative_url }}">
+        {{ highest_weight_post.title | escape }}
+      </a></h4>
+      {%- if include.show_excerpts or site.show_excerpts -%}
+      <p class="hero__excerpt">
+        {{ highest_weight_post.excerpt }}
+      </p>
+      {%- endif -%}
+    </div>
+  </article>
+
+
+
+  <aside class="hero__side">
+    {% for post in limited_posts %}
+    <article class="hero__side-item">
+      <h5 class="hero__side-title">
+        <a href={{ post.url }}>
+          {{ post.title }}
+        </a>
+      </h5>
+    </article>
+    {% endfor %}
+  </aside>
+</section>
+
+{% include latest-and-jatiyo.html %}
+
+
+<div class="container">
+{% assign featured_posts = site.posts | where: "category", "featured" %}
+
+
+{% assign antorjatik_posts = site.posts | where: "categories", "আন্তর্জাতিক" %}
+{% assign khela_posts = site.posts | where: "categories", "খেলা" %}
+
+{% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
+
+
+{% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/news/জাতীয়" post_limit=5 list_level=2 %}
+
+{% include post-list.html list_title="খেলা" posts=khela_posts more_link="/news/খেলা" post_limit=6 list_level=1 %}
+
+{% include post-list.html list_title="প্রযুক্তি"
+posts=projukti_posts more_link="/news/প্রযুক্তি" post_limit=4 %}
+
+<p class="rss-subscribe">
+  subscribe
+  <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+</p>
+
+{%- endif -%}
+
+</div>
+</div>

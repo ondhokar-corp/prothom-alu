@@ -1,0 +1,17 @@
+<div class="ad-container">
+  <h4>{{ include.title | default: "**বিজ্ঞাপন**"  | markdownify }}</h4>
+  <div>{{ include.content | default: "*আপনার পণ্যের বিজ্ঞাপন দিন*" | markdownify }}</div>
+</div>
+
+<style>
+	.ad-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin: 10px 0;
+}
+
+.ad-container h4 {
+  margin-top: 0;
+}
+</style>
