@@ -1,30 +1,21 @@
 /**
- * Skeleton V2.0.4
- * Copyright 2014, Dave Gamache
- * www.getskeleton.com
- * Free to use under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 12/29/2014
+ * Table of contents
+ * ––––––––––––––––––––––––––––––––––––––––––––––––––
+ * - Grid
+ * - Base Styles
+ * - Typography
+ * - Links
+ * - Buttons
+ * - Forms
+ * - Lists
+ * - Code
+ * - Tables
+ * - Spacing
+ * - Utilities
+ * - Clearing
+ * - Media Queries
  *
- * @format
  */
-
-/* Table of contents
-––––––––––––––––––––––––––––––––––––––––––––––––––
-- Grid
-- Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
-- Spacing
-- Utilities
-- Clearing
-- Media Queries
-*/
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -52,7 +43,7 @@
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (min-width: 750px) {
   .container {
     width: 80%;
   }
@@ -184,7 +175,7 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%;
 }
-body{
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;

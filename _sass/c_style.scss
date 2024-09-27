@@ -1,128 +1,127 @@
-/** @format **/
-
 @import "skeleton/_normalize", "skeleton/_skeleton", "alu/hero";
 img {
-    max-width: 100%;
-    object-fit: cover;
+  max-width: 100%;
+  object-fit: cover;
 }
 figure > img {
-    display: block;
+  display: block;
 }
 a {
-    text-decoration: none;
-    color: black;
-    &.category {
-        background-color: blue;
-        color: white;
-        padding-inline: 5px;
-        background-size: 20px;
-    }
+  text-decoration: none;
+  color: black;
+  &.category {
+    background-color: blue;
+    color: white;
+    padding-inline: 5px;
+    background-size: 20px;
+  }
 }
 .svg-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    fill: #aaa;
-    padding-right: 5px;
-    vertical-align: text-top;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #aaa;
+  padding-right: 5px;
+  vertical-align: text-top;
 }
 .post-list {
-    margin: 5rem 0;
-    img {
-        width: 100%;
-    }
-    &-container-0 {
-        display: block;
-    }
-    &-container-1 {
-        display: grid;
-        grid-template-columns: repeat(
-            2,
-            1fr
-        ); // Two columns for the first two links
-        gap: 20px; // Space between items
+  margin: 5rem 0;
+  img {
+    width: 100%;
+  }
+  &-container-0 {
+    display: block;
+  }
+  &-container-1 {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); // Two columns for the first two links
+    gap: 20px; // Space between items
 
-        article:nth-child(n + 3) {
-            grid-column: span 2; // Span both columns for 3rd linkand beyond
-        }
+    article:nth-child(n + 3) {
+      grid-column: span 2; // Span both columns for 3rd linkand beyond
     }
+  }
 
+  &-container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; // Space between items
+    article {
+      &:nth-child(1) {
+        grid-column: span 2;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        grid-column: span 1;
+      }
+      &:nth-child(n + 4) {
+        grid-column: span 2;
+      }
+    }
+  }
+  @media (min-width: 750px) {
     &-container-2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px; // Space between items
-        article {
-            &:nth-child(1) {
-                grid-column: span 2;
-            }
-            &:nth-child(2),
-            &:nth-child(3) {
-                grid-column: span 1;
-            }
-            &:nth-child(n + 4) {
-                grid-column: span 2;
-            }
-        }
+      grid-template-columns: repeat(3, 1fr);
+      article:nth-child(n) {
+        grid-column: span 1;
+      }
     }
-    @media (min-width: 768px) {
-        &-container-2 {
-            grid-template-columns: repeat(3, 1fr);
-            article:nth-child(n) {
-                grid-column: span 1;
-            }
-        }
-    }
+  }
 }
 
 article {
-    &.news {
-        padding-block: 10px;
-        h5 {
-            margin: 0;
-        }
+  &.news {
+    padding-block: 10px;
+    border-block-end: solid 2px #eee;
+    h5 {
+      margin: 0;
     }
-    &.post {
-        header {
-            width: 100%;
-            margin-block-end: 20px;
-            h2 {
-                margin-block: 0;
-            }
-            p {
-                color: #666;
-            }
-        }
-        main {
-            max-width: 60ch;
-            text-align: justify;
-        }
-    }
-    .post-meta {
-        margin: 0;
-        font-size: small;
+  }
+  &.post {
+    header {
+      width: 100%;
+      margin-block-end: 20px;
+      h2 {
+        margin-block: 0;
+      }
+      p {
         color: #666;
+      }
     }
+    main {
+      max-width: 60ch;
+      text-align: justify;
+    }
+  }
+  .post-meta {
+    margin: 0;
+    font-size: small;
+    color: #666;
+  }
 }
 
 .jatiyo-latest {
-    margin: 0 auto;
-    box-sizing: border-box;
-    .jatiyo {
-        padding: 0 20px;
-    }
-    aside.latest-section {
-        background-color: #eee;
-        padding: 20px;
-    }
+  margin: 0 auto;
+  box-sizing: border-box;
+  .jatiyo {
+    padding: 0 20px;
+  }
+  aside.latest-section {
+    background-color: #eee;
+    padding: 20px;
+  }
 }
 
-@media (min-width: 768px) {
-    .jatiyo-latest {
-        position: relative;
-        width: 100%;
-        max-width: 960px;
-        .jatiyo {
-            padding: 0;
-        }
+@media (min-width: 1000px) {
+  .jatiyo-latest {
+    position: relative;
+    width: 100% !important;
+    max-width: 960px;
+    .jatiyo {
+      padding: 0;
     }
+  }
 }
