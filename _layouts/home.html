@@ -29,7 +29,7 @@ layout: default_fluid
 
   <section class="hero">
     <article class="hero__featured">
-      
+
       {%- if highest_weight_post.cover.show_in_list -%}
       <img src="{{ highest_weight_post.cover.image }}" alt="{{ highest_weight_post.cover.alt }}" />
     {%- endif -%}
@@ -73,12 +73,12 @@ layout: default_fluid
 {% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
 
 
-{% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/news/জাতীয়" post_limit=5 list_level=2 %}
+{% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/categories/জাতীয়" post_limit=5 list_level=2 %}
 
-{% include post-list.html list_title="খেলা" posts=khela_posts more_link="/news/খেলা" post_limit=6 list_level=1 %}
+{% include post-list.html list_title="খেলা" posts=khela_posts more_link="/categories/খেলা" post_limit=6 list_level=1 %}
 
 {% include post-list.html list_title="প্রযুক্তি"
-posts=projukti_posts more_link="/news/প্রযুক্তি" post_limit=4 %}
+posts=projukti_posts more_link="/categories/প্রযুক্তি" post_limit=4 %}
 
 <p class="rss-subscribe">
   subscribe
