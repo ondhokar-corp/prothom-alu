@@ -1,4 +1,4 @@
-@import "skeleton/_normalize", "skeleton/_skeleton", "alu/hero";
+@import "skeleton/_normalize", "skeleton/_skeleton", "alu/hero", "alu/footer";
 img {
   max-width: 100%;
   object-fit: cover;
@@ -33,15 +33,29 @@ a {
     display: block;
   }
   &-container-1 {
-    display: grid;
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); // Two columns for the first two links
-    gap: 20px; // Space between items
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-    article:nth-child(n + 3) {
-      grid-column: span 2; // Span both columns for 3rd linkand beyond
+    article {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      h5 {
+        font-size: 1.6rem;
+      }
+      img {
+        width: 30%;
+        height: 100px;
+      }
+
+      &:first-child {
+        flex-direction: column;
+        img {
+          width: 100%;
+          height: 250px;
+        }
+      }
     }
   }
 
