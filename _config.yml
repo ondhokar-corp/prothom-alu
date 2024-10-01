@@ -22,7 +22,7 @@ title: প্রথম আলু
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   শুধু বিনোদনের জন্য এই নিউজ পোর্টাল। এই সাইটের কোনো নিউজের সাথে বাস্তবতার কোনো মিল নেই। কোনো প্রতিবেদনের সাথে বাস্তবতা মিলে গেলে তার নেহাতই কাকতালীয়।
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/prothom-alu"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
