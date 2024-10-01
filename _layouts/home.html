@@ -29,20 +29,21 @@ layout: default_fluid
 
   <section class="hero">
     <article class="hero__featured">
-
-      {%- if highest_weight_post.cover.image -%}
-      <img src="{{ highest_weight_post.cover.image }}" alt="{{ highest_weight_post.cover.alt }}" />
-    {%- endif -%}
-    <div>
-      <h5 class="title"><span>ফিচার্ড</span> <a href="{{ highest_weight_post.url | relative_url }}">
-        {{ highest_weight_post.title | escape }}
-      </a></h5>
-      {%- if include.show_excerpts or site.show_excerpts -%}
-      <p class="hero__excerpt">
-        {{ highest_weight_post.excerpt }}
-      </p>
+      <a href="{{ highest_weight_post.url | relative_url }}">
+        {%- if highest_weight_post.cover.image -%}
+        <img src="{{ highest_weight_post.cover.image }}" alt="{{ highest_weight_post.cover.alt }}" />
       {%- endif -%}
-    </div>
+      <div>
+        <h4 class="title"><span>ফিচার্ড</span> 
+          {{ highest_weight_post.title | escape }}
+        </h4>
+        {%- if include.show_excerpts or site.show_excerpts -%}
+        <p class="hero__excerpt">
+          {{ highest_weight_post.excerpt }}
+        </p>
+        {%- endif -%}
+      </div>
+    </a>
   </article>
 
 
@@ -50,16 +51,16 @@ layout: default_fluid
   <aside class="hero__side">
     {% for post in limited_posts %}
     <article class="hero__side-item">
-      {%- if post.cover.image -%}
-      <img src="{{ post.cover.image }}" alt="{{ post.cover.alt }}" />
-    {%- endif -%}
-    <div>
-      <h5 class="hero__side-title">
-        <a href={{ post.url }}>
+      <a href={{ post.url }}>
+        {%- if post.cover.image -%}
+        <img src="{{ post.cover.image }}" alt="{{ post.cover.alt }}" />
+      {%- endif -%}
+      <div>
+        <h5 class="hero__side-title">
           {{ post.title }}
-        </a>
-      </h5>
-    </div>
+        </h5>
+      </div>
+    </a>
   </article>
   {% endfor %}
 </aside>
