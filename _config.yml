@@ -27,7 +27,6 @@ url: "ondhokar-corp.github.io" # the base hostname & protocol for your site, e.g
 twitter_username: OC
 github_username:  OC
 theme: minima
-destination: ./build # necessary for ghpages gh action in main.yml
 # Build settings
 plugins:
   - jekyll-feed
