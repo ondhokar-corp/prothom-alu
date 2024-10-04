@@ -1,0 +1,19 @@
+@function readable-color(
+  $background,
+  $light-color: $color-light,
+  $dark-color: $color-dark
+) {
+  // Calculate the relative luminance of the background color
+  $r: red($background) / 255;
+  $g: green($background) / 255;
+  $b: blue($background) / 255;
+
+  $r: if($r < 0.03928, $r / 12.92, pow(($r + 0.055) / 1.055, 2.4));
+  $g: if($g < 0.03928, $g / 12.92, pow(($g + 0.055) / 1.055, 2.4));
+  $b: if($b < 0.03928, $b / 12.92, pow(($b + 0.055) / 1.055, 2.4));
+
+  $luminance: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+
+  // Return the light color if the luminance is low, otherwise return the dark color
+  @return if($luminance > 0.279, $dark-color, $light-color);
+}

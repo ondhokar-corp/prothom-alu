@@ -1,4 +1,4 @@
-<section class="post-list">
+<div class="post-list">
   <h4 class="post-list-heading">
     {%- if include.more_link -%}
     <a class="category" href="{{ include.more_link | relative_url }}">{{ include.list_title | default: "Posts" }}</a>
@@ -22,17 +22,17 @@
 
     {%- else -%}
     <img src="{{ "/assets/images/default/thumb.png" | relative_url }}" alt="Thumbnail" />
-    {%- endif -%}
+  {%- endif -%}
 
-    <h5>
+  <h5>
     <a class="post-link" href="{{ post.url | relative_url }}">
-    {{ post.title | escape }}
+      {{ post.title | escape }}
     </a>
-    </h5>
-    {%- if include.show_excerpts or site.show_excerpts -%}
-    {{ post.excerpt }}
-    {%- endif -%}
-    </article>
-    {%- endfor -%}
-    </div>
-    </section>
+  </h5>
+  {%- if include.show_excerpts or site.show_excerpts -%}
+  {{ post.excerpt }}
+  {%- endif -%}
+</article>
+{%- endfor -%}
+</div>
+</div>

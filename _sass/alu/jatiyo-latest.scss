@@ -1,21 +1,33 @@
 .jatiyo-latest {
   margin: 0 auto;
   box-sizing: border-box;
+  gap: $gap-default;
+  border-block-end: 2px solid $color-accent;
   h4 {
-    padding:0 $gap-default;
+    // padding: 0 $gap-default;
+    color: readable-color($color-primary);
   }
   .jatiyo {
     padding: 0 $gap-default;
   }
   .latest-section {
-    // padding: $gap-default;
-    .latest-wrapper {
-      > * {
-        padding: $gap-default;
+    margin-block-start: 4rem;
+    .latest-heading {
+      background-color: $color-accent;
+      padding-block: $gap-default;
+      h4 {
+        padding-inline-start: $gap-default;
+        margin: 0;
+        color: readable-color($color-accent);
       }
+    }
+    .latest-wrapper {
       article {
         padding: $gap-default * 2 $gap-default;
         border-block-end: 1px solid $color-accent;
+        &:last-child {
+          border-block-end: 0;
+        }
       }
     }
   }
@@ -30,11 +42,14 @@
       padding: 0;
     }
     .latest-section {
+      margin: 0;
       padding-inline-start: 0;
+      border-inline-start: 2px solid $color-accent;
+      .latest-heading {
+        width: 51vw;
+        padding: 0;
+      }
       .latest-wrapper {
-        border-inline-start: 2px solid $color-accent;
-        border-block-start: 2px solid $color-accent;
-        height: 100%;
         article {
           padding: $gap-default;
         }

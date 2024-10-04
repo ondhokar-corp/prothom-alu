@@ -10,6 +10,9 @@ article {
     header {
       width: 100% !important;
       margin-block-end: 20px;
+      a {
+        font-size: $h5-font-size;
+      }
       img {
         width: 100%;
       }
@@ -23,7 +26,9 @@ article {
     main {
       max-width: 60ch;
       text-align: justify;
-
+      a {
+        text-decoration: underline;
+      }
       blockquote {
         border-right: solid 4px $color-accent;
         background-color: rgba($color-accent, 0.1);

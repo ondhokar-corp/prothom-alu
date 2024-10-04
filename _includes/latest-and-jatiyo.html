@@ -10,7 +10,7 @@ top_ten_posts | slice: midpoint, top_ten_posts.size %}
     <h4>
       <a href="/categories/জাতীয়" class="category">জাতীয়</a>
     </h4>
-    <section class="grid">
+    <div class="grid jatiyo-wrapper">
       <div>
         {%- for post in first_jatiyo -%}
         <article class="news">
@@ -61,13 +61,13 @@ top_ten_posts | slice: midpoint, top_ten_posts.size %}
 </article>
 {%- endfor -%}
 </div>
-</section>
+</div>
 </div>
 <aside class="latest-section">
+<div class="latest-heading">
 <h4>সর্বশেষ</h4>
+</div>
 <div class="latest-wrapper">
-  
-
 {%- for post in latest_posts -%}
 <article class="news">
 <p class="post-meta">
@@ -80,8 +80,6 @@ top_ten_posts | slice: midpoint, top_ten_posts.size %}
 </h5>
 </article>
 {%- endfor -%}
-
-<a href="" class="more">Load More</a>
 </div>
 </aside>
 </section>

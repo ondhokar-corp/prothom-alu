@@ -1,5 +1,6 @@
+
 .post-list {
-  margin: $gap-default 0;
+  margin-block-start: $gap-default * 2;
   img {
     width: 100%;
   }
@@ -48,6 +49,7 @@
     }
   }
   @media (min-width: $tab) {
+    margin: 0;
     &-container-2 {
       grid-template-columns: repeat(3, 1fr);
       article:nth-child(n) {

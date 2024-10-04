@@ -1,4 +1,7 @@
 footer {
+  background-color: $color-primary;
+  margin-block-start: $gap-default * 4;
+  margin-block-end: -1rem;
   .logo {
     width: 200px;
   }

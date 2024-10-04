@@ -1,0 +1,25 @@
+<div class="swiffy-slider slider-item-show3 slider-nav-light slider-nav-hidden slider-nav-inside slider-item-snapstart slider-nav-sm slider-indicators-square slider-indicators-outside slider-indicators-dark slider-nav-animation slider-item-first-visible slider-nav-autoplay slider-nav-autopause breaking-ticker">
+  <div class="slider-container">
+    {% for news in site.data.breaking %}
+    <div>
+      <p>
+
+        Today @ {{ news.time }}
+        <br><strong>{{ news.title }}
+        </strong>
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <button type="button" class="slider-nav" aria-label="Go left"></button>
+  <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+  <div class="slider-indicators" style="justify-content:right;margin-left: 3rem;">
+    <button class="active" aria-label="Go to slide"></button>
+    <button aria-label="Go to slide"></button>
+    <button aria-label="Go to slide"></button>
+    <button aria-label="Go to slide"></button>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+.breaking-ticker {
+  .slider-container {
+    background-color: $color-accent;
+    color: readable-color($color-accent);
+    padding-block: $gap-default;
+    .slide-visible {
+      padding-inline-start: $gap-default;
+      p {
+        margin-block-start: 0;
+      }
+    }
+  }
+}

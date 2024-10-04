@@ -72,6 +72,3 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
-header_pages:
-   path: '/about'
-   title: 'About'

@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: $gap-default;
-  margin-block: $gap-default * 3;
   padding: $gap-default;
   article {
     position: relative;
@@ -12,7 +11,8 @@
       .title:before {
         content: "ফিচার্ড";
         background-color: $color-accent;
-        color: $color-light;
+        color: readable-color($color-accent);
+        padding-inline: $gap-default;
       }
     }
 
