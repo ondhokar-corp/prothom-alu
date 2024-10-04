@@ -18,21 +18,21 @@
       <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
       {%- if post.cover.image -%}
 
-      <img src="{{ post.cover.image }}" alt="{{ post.cover.alt }}" />
+      <img src="{{ post.cover.image  | relative_url}}" alt="{{ post.cover.alt }}" />
 
     {%- else -%}
-    <img src="/assets/images/default/thumb.png" alt="Thumbnail" />
-  {%- endif -%}
+    <img src="{{ "/assets/images/default/thumb.png" | relative_url }}" alt="Thumbnail" />
+    {%- endif -%}
 
-  <h5>
+    <h5>
     <a class="post-link" href="{{ post.url | relative_url }}">
-      {{ post.title | escape }}
+    {{ post.title | escape }}
     </a>
-  </h5>
-  {%- if include.show_excerpts or site.show_excerpts -%}
-  {{ post.excerpt }}
-  {%- endif -%}
-</article>
-{%- endfor -%}
-</div>
-</section>
+    </h5>
+    {%- if include.show_excerpts or site.show_excerpts -%}
+    {{ post.excerpt }}
+    {%- endif -%}
+    </article>
+    {%- endfor -%}
+    </div>
+    </section>

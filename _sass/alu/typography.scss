@@ -1,0 +1,78 @@
+$heading-margin-top: 0;
+$heading-margin-bottom: 0.5rem;
+$heading-font-weight: 500;
+$heading-line-height: 1.2;
+$heading-color: black;
+
+$h1-font-size: calc(1.375rem + 1.5vw);
+$h1-font-size-lg: 2.5rem;
+
+$h2-font-size: calc(1.325rem + 0.9vw);
+$h2-font-size-lg: 2rem;
+
+$h3-font-size: calc(1.3rem + 0.6vw);
+$h3-font-size-lg: 1.75rem;
+
+$h4-font-size: calc(1.275rem + 0.3vw);
+$h4-font-size-lg: 1.5rem;
+
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $heading-margin-top;
+  margin-bottom: $heading-margin-bottom;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  color: $heading-color;
+}
+
+h1 {
+  font-size: $h1-font-size;
+
+  @media (min-width: $pc) {
+    font-size: $h1-font-size-lg;
+  }
+}
+
+h2 {
+  font-size: $h2-font-size;
+
+  @media (min-width: $pc) {
+    font-size: $h2-font-size-lg;
+  }
+}
+
+h3 {
+  font-size: $h3-font-size;
+
+  @media (min-width: $pc) {
+    font-size: $h3-font-size-lg;
+  }
+}
+
+h4 {
+  font-size: $h4-font-size;
+
+  @media (min-width: $pc) {
+    font-size: $h4-font-size-lg;
+  }
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

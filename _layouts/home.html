@@ -14,89 +14,58 @@ layout: default_fluid
   {%- assign posts = include.posts | default: site.posts -%}
   {%- assign limited_posts = posts | slice: 0, 3 -%}
 
-  {% assign highest_weight_post = site.posts | first %}
-  {% assign max_weight = highest_weight_post.weight | default: 0 %}
-
-  {% for post in site.posts %}
-  {% if post.weight and post.weight > max_weight %}
-  {% assign highest_weight_post = post %}
-  {% assign max_weight = post.weight %}
-  {% endif %}
-  {% endfor %}
-
-
+  {% assign sorted_posts = site.posts | sort: 'weight' | reverse %}
+  {% assign filtered_posts = sorted_posts | where_exp: "post", "post.cover.image" %}
 
 
   <section class="hero">
-    <article class="hero__featured">
-      <a href="{{ highest_weight_post.url | relative_url }}">
-        {%- if highest_weight_post.cover.image -%}
-        <img src="{{ highest_weight_post.cover.image }}" alt="{{ highest_weight_post.cover.alt }}" />
-      {%- endif -%}
-      <div>
-        <h4 class="title"><span>ফিচার্ড</span> 
-          {{ highest_weight_post.title | escape }}
-        </h4>
-        {%- if include.show_excerpts or site.show_excerpts -%}
-        <p class="hero__excerpt">
-          {{ highest_weight_post.excerpt }}
-        </p>
-        {%- endif -%}
-      </div>
-    </a>
-  </article>
-
-
-
-  <aside class="hero__side">
-    {% for post in limited_posts %}
-    <article class="hero__side-item">
-      <a href={{ post.url }}>
+    {% for post in filtered_posts limit:5 %}
+    <article>
+      <a href="{{ post.url | relative_url }}">
         {%- if post.cover.image -%}
-        <img src="{{ post.cover.image }}" alt="{{ post.cover.alt }}" />
+        <img src="{{ post.cover.image  | relative_url }}" alt="{{ post.cover.alt }}" />
       {%- endif -%}
-      <div>
-        <h5 class="hero__side-title">
-          {{ post.title }}
-        </h5>
+      <div class="meta">
+        <h4 class="title">
+          {{ post.title | escape }}
+        </h4>
       </div>
     </a>
   </article>
-  {% endfor %}
-</aside>
+  {%- endfor -%}
 </section>
 
 {% include latest-and-jatiyo.html %}
 
 
 <div class="container">
-{% assign featured_posts = site.posts | where: "category", "featured" %}
+  {% assign featured_posts = site.posts | where: "category", "featured" %}
 
 
-{% assign antorjatik_posts = site.posts | where: "categories", "আন্তর্জাতিক" %}
-{% assign khela_posts = site.posts | where: "categories", "খেলা" %}
+  {% assign antorjatik_posts = site.posts | where: "categories", "আন্তর্জাতিক" %}
+  {% assign khela_posts = site.posts | where: "categories", "খেলা" %}
 
-{% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
+  {% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
 
-<section class="row">
+  <section class="grid">
 
-<div class="column one-third">
-{% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/categories/আন্তর্জাতিক" post_limit=6 list_level=1 %}
-</div>
-<div class="column one-third">
-{% include post-list.html list_title="খেলা" posts=khela_posts more_link="/categories/খেলা" post_limit=6 list_level=1 %}
-</div>
-<div class="column one-third">
-{% include post-list.html list_title="প্রযুক্তি"
-posts=projukti_posts more_link="/categories/প্রযুক্তি" post_limit=6 list_level=1 %}
-</div>
-</section>
-<p class="rss-subscribe">
-subscribe
-<a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
-</p>
+    <div>
+      {% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/categories/আন্তর্জাতিক" post_limit=6 list_level=1 %}
+    </div>
+    <div>
+      {% include post-list.html list_title="খেলা" posts=khela_posts more_link="/categories/খেলা" post_limit=6 list_level=1 %}
+    </div>
+    <div>
+      {% include post-list.html list_title="প্রযুক্তি"
+      posts=projukti_posts more_link="/categories/প্রযুক্তি" post_limit=6 list_level=1 %}
+    </div>
+  </section>
+  <p class="rss-subscribe">
+    subscribe
+    <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+  </p>
 
-{%- endif -%}
+  {%- endif -%}
 
 </div>
 </div>

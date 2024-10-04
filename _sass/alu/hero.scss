@@ -1,103 +1,52 @@
 .hero {
   display: grid;
-  grid-template-columns: 1fr;
-  margin-block: 50px;
-  padding: 20px;
-  gap: 10px;
-  background-color: rgba($color-bg-alt, 1);
-
-  &__featured {
+  grid-template-columns: repeat(1, 1fr);
+  gap: $gap-default;
+  margin-block: $gap-default * 3;
+  padding: $gap-default;
+  article {
     position: relative;
-
+    width: 100%;
     overflow: hidden;
-    height: 100%;
-
-    img {
-      height: 100% !important;
-      width: 100% !important;
-      object-fit: cover;
-      transition: all 300ms ease;
-      &:hover {
-        scale: 1.2;
+    &:first-child {
+      .title:before {
+        content: "ফিচার্ড";
+        background-color: $color-accent;
+        color: $color-light;
       }
     }
 
-    div {
-      position: absolute;
-
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0;
-
-      .title {
-        margin: 0 !important;
-        width: 100%;
-        background-color: $color-light;
-        display: inline;
-        span {
-          background-color: $color-accent;
-          color: $color-light;
-          padding: 0 10px;
-        }
-      }
-
-      .hero__excerpt {
-        margin: 0;
-        font-size: 1.6rem;
-      }
-    }
-  }
-
-  aside {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    article {
-      overflow: hidden;
-      position: relative;
+    a {
+      display: block;
       height: 100%;
-      img {
-        position: relative;
-        height: 100px;
-        width: 100%;
-        transition: scale 300ms ease;
-        &:hover {
+      &:hover {
+        img {
           scale: 1.1;
         }
       }
-      div {
-        bottom: 0;
-        left: 0;
-        right: 0;
+      img {
+        height: 100%;
+        width: 100%;
+        transition: scale 200ms ease;
+      }
+      .meta {
         position: absolute;
-        h5 {
-          background-color: $color-light;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        .title {
           display: inline;
-          margin: 0;
+          background-color: $color-light;
+          color: $color-dark;
         }
       }
     }
   }
-
-  @media (min-width: 750px) {
-    margin-block-end: 100px;
-    grid-template-columns: 1fr 1fr;
-    border-block-end: none;
-    &__featured {
-      div {
-        .title {
-          font-size: 5rem;
-        }
-      }
-    }
-    aside {
-      grid-template-columns: repeat(2, 1fr);
-      article {
-        img {
-          height: 100%;
-        }
-      }
+  @media (min-width: $tab) {
+    grid-template-columns: repeat(4, 1fr);
+    article:first-child {
+      grid-row: span 2;
+      grid-column: span 2;
     }
   }
 }
