@@ -6,6 +6,7 @@
   padding-block-end: calc($gap-default/4);
   background-color: $color-accent;
   color: readable-color($color-accent);
+
   .wrapper {
     display: flex;
     flex-direction: row;
@@ -13,5 +14,12 @@
   }
   .logo {
     max-height: 32px;
+  }
+}
+
+#site-header {
+  transition: all 300ms ease;
+  &.scrolled {
+    background-color: #fff;
   }
 }

@@ -1,12 +1,20 @@
-.breaking-ticker {
-  .slider-container {
+.swiffy-slider.breaking-ticker {
+  padding-block-end: 0 !important;
+  border-block-end: 2px solid $color-accent;
+  .title {
+    padding-block-start: 8rem;
     background-color: $color-accent;
-    color: readable-color($color-accent);
-    padding-block: $gap-default;
+    padding-inline: $gap-default;
+  }
+  .slider-container {
+    padding: 0;
     .slide-visible {
-      padding-inline-start: $gap-default;
+      padding-inline: $gap-default;
       p {
-        margin-block-start: 0;
+        margin: 0;
+      }
+      h4 {
+        max-width: 90%;
       }
     }
   }

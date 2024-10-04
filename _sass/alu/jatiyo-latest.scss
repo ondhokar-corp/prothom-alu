@@ -35,11 +35,10 @@
 
 @media (min-width: $tab) {
   .jatiyo-latest {
-    position: relative;
-    width: 100% !important;
+    //width: 100% !important;
     max-width: $container-width;
     .jatiyo {
-      padding: 0;
+      padding: 0 0 0 $gap-default;
     }
     .latest-section {
       margin: 0;

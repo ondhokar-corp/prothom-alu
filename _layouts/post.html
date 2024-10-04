@@ -1,32 +1,35 @@
 ---
-layout: default
+layout: default_fluid
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-
-    <a itemprop="category" href="/news/{{ page.categories[1] }}" class="category"><span class="p-category h-card" itemprop="category">{{ page.categories.last }}</span></a>
-
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <div class="container">
 
 
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date |  bangla_date }}
-      </time>
-      {%- if page.author -%}
-      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}
-      {%- if page.place -%}
-      <span></span> • <span itemprop="place" itemscope itemtype="http://schema.org/Place"><span class="p-place h-card" itemprop="place">{{ page.place }}</span></span>
-      {%- endif -%}
-    </p>
-    {% if page.cover.image %}
-    <img src="{{ page.cover.image | relative_url }}" alt="{{ page.cover.alt }}" class="cover-image">
-    {% endif %}
+      <a itemprop="category" href="/news/{{ page.categories[1] }}" class="category"><span class="p-category h-card" itemprop="category">{{ page.categories.last }}</span></a>
+
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+
+
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date |  bangla_date }}
+        </time>
+        {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        {%- endif -%}
+        {%- if page.place -%}
+        <span></span> • <span itemprop="place" itemscope itemtype="http://schema.org/Place"><span class="p-place h-card" itemprop="place">{{ page.place }}</span></span>
+        {%- endif -%}
+      </p>
+      {% if page.cover.image %}
+      <img src="{{ page.cover.image | relative_url }}" alt="{{ page.cover.alt }}" class="cover-image">
+      {% endif %}
+    </div>
   </header>
 
-  <main class="post-content e-content" itemprop="articleBody">
+  <main class="post-content container e-content" itemprop="articleBody">
     {{ content }}
   </main>
 

@@ -8,30 +8,42 @@ article {
   }
   &.post {
     header {
+      background-color: $color-accent;
       width: 100% !important;
-      margin-block-end: 20px;
+      margin-block-end: $gap-default * 3;
+      padding-block-start: $gap-default * 3;
+      .container {
+        position: relative;
+      }
       a {
         font-size: $h5-font-size;
       }
+       .post-meta {
+    margin: 0;
+    opacity: 0.6;
+  }
       img {
         width: 100%;
+        margin-block-end: $gap-default * -5;
+        z-index: -111;
       }
-      h2 {
+      h1 {
         margin-block: 0;
       }
       p {
-        color: #666;
+        margin: 0;
       }
     }
     main {
+      margin-block-start: $gap-default * 6;
       max-width: 60ch;
       text-align: justify;
       a {
         text-decoration: underline;
       }
       blockquote {
-        border-right: solid 4px $color-accent;
-        background-color: rgba($color-accent, 0.1);
+        border-right: solid 4px $color-success;
+        background-color: rgba($color-success, 0.1);
         color: $color-dark;
         padding: $gap-default;
         margin: 10px 0 10px 20px;
@@ -45,9 +57,5 @@ article {
       }
     }
   }
-  .post-meta {
-    margin: 0;
-    font-size: small;
-    color: #666;
-  }
+ 
 }
