@@ -8,7 +8,6 @@ layout: default_fluid
   {%- endif -%}
 
   {{ content }}
-{% include breaking-ticker.html %}
   {%- if site.posts.size > 0 %}
   <!-- Here will be featured section -->
   {%- assign posts = include.posts | default: site.posts -%}
@@ -16,45 +15,47 @@ layout: default_fluid
 
   {% assign sorted_posts = site.posts | sort: 'weight' | reverse %}
   {% assign filtered_posts = sorted_posts | where_exp: "post", "post.cover.image" %}
-
-
   <section class="hero">
     {% for post in filtered_posts limit:5 %}
     <article>
       <a href="{{ post.url | relative_url }}">
         {%- if post.cover.image -%}
-        <img src="{{ post.cover.image  | relative_url }}" alt="{{ post.cover.alt }}" />
-      {%- endif -%}
-      <div class="meta">
-        <h4 class="title">
-          {{ post.title | escape }}
-        </h4>
-      </div>
-    </a>
-  </article>
-  {%- endfor -%}
-</section>
+        {% if post.cover.image contains 'http' %}
+        <img src="{{ post.cover.image }}" alt="{{ post.title }}">
+        {% else %}
+        <img src="{{ post.url | relative_url | append: post.cover.image }}" alt="{{ post.title }}">
+        {% endif %}
+
+        {%- endif -%}
+        <div class="meta">
+          <h4 class="title">
+            {{ post.title | escape }}
+          </h4>
+        </div>
+      </a>
+    </article>
+    {%- endfor -%}
+  </section>
+  <div class="ad-banner">
+    <img src="{{"/assets/images/ads/coffeena.png" | relative_url }}" alt="" />
+</div>
 
 {% include latest-and-jatiyo.html %}
+{% assign antorjatik_posts = site.posts | where: "categories", "আন্তর্জাতিক" %}
+{% assign khela_posts = site.posts | where: "categories", "খেলা" %}
 
-
+{% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
 <section class="container">
-  {% assign antorjatik_posts = site.posts | where: "categories", "আন্তর্জাতিক" %}
-  {% assign khela_posts = site.posts | where: "categories", "খেলা" %}
-
-  {% assign projukti_posts = site.posts | where: "categories", "প্রযুক্তি" %}
-
   <div class="grid">
-
     {% include post-list.html list_title="আন্তর্জাতিক" posts=antorjatik_posts more_link="/categories/আন্তর্জাতিক" post_limit=6 list_level=1 %}
 
     {% include post-list.html list_title="খেলা" posts=khela_posts more_link="/categories/খেলা" post_limit=6 list_level=1 %}
 
     {% include post-list.html list_title="প্রযুক্তি"
     posts=projukti_posts more_link="/categories/প্রযুক্তি" post_limit=6 list_level=1 %}
-
   </div>
 </section>
+
 <p class="rss-subscribe">
   subscribe
   <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>

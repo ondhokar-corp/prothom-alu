@@ -1,0 +1,11 @@
+.ad-banner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: $tab) {
+  .ad-banner {
+    max-width: $container-width;
+    padding: 0 $gap-default;
+  }
+}

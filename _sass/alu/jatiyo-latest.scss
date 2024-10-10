@@ -1,8 +1,9 @@
 .jatiyo-latest {
   margin: 0 auto;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   gap: $gap-default;
   border-block-end: 2px solid $color-accent;
+
   h4 {
     // padding: 0 $gap-default;
     color: readable-color($color-primary);
@@ -11,6 +12,7 @@
     padding: 0 $gap-default;
   }
   .latest-section {
+    box-sizing: border-box;
     margin-block-start: 4rem;
     .latest-heading {
       background-color: $color-accent;
@@ -22,6 +24,9 @@
       }
     }
     .latest-wrapper {
+      p {
+        margin: 0;
+      }
       article {
         padding: $gap-default * 2 $gap-default;
         border-block-end: 1px solid $color-accent;
@@ -35,10 +40,11 @@
 
 @media (min-width: $tab) {
   .jatiyo-latest {
-    //width: 100% !important;
+    // width: 100% !important;
     max-width: $container-width;
     .jatiyo {
-      padding: 0 0 0 $gap-default;
+      padding: 0;
+      //padding-inline-start: $gap-default;
     }
     .latest-section {
       margin: 0;

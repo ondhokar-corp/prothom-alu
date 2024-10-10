@@ -10,6 +10,7 @@ gem "rackup"
 group :jekyll_plugins do
   gem "jekyll-paginate-v2", ">= 3.0"
   gem "jekyll-feed"
+  gem 'jekyll-postfiles'
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"

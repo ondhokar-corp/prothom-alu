@@ -59,7 +59,7 @@ exclude:
 # Due to us using the categories for posts then it is advisable to explicitly specify a 
 # permalink structure for the site. Otherwise Jekyll attempts to organize the pages in folders
 # by the category names and it doesn't understand multi-categories to well :/
-permalink: /:year/:month/:title.html
+permalink: /:year/:month/:title/
 #permalink: pretty
 
 # Pagination Settings

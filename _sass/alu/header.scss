@@ -1,25 +1,15 @@
-.site-header {
-  top: 0;
-  position: sticky;
-  z-index: 99999;
-  padding: $gap-default;
-  padding-block-end: calc($gap-default/4);
-  background-color: $color-accent;
-  color: readable-color($color-accent);
-
-  .wrapper {
+header {
+  background-color: #fff;
+  .tac {
     display: flex;
-    flex-direction: row;
-    flex-basis: auto;
-  }
-  .logo {
-    max-height: 32px;
-  }
-}
-
-#site-header {
-  transition: all 300ms ease;
-  &.scrolled {
-    background-color: #fff;
+    width: 100%;
+    justify-content: center;
+    a {
+      display: block;
+      padding: $gap-default;
+    }
+    img {
+      max-width: 256px;
+    }
   }
 }

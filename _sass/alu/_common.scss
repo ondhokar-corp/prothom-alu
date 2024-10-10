@@ -1,7 +1,10 @@
+* {
+  //border: 1px solid red;
+}
 body {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   background-color: $color-light;
 }
 img {
@@ -16,12 +19,12 @@ a {
   text-decoration: none;
   color: $color-dark;
   transition: opacity 300ms ease;
-&.category {
-  background-color: $color-primary;
-  color: readable-color($color-primary);
-  padding-inline: 5px;
-  background-size: 20px;
-}
+  &.category {
+    background-color: $color-primary;
+    color: readable-color($color-primary);
+    padding-inline: 5px;
+    background-size: 20px;
+  }
   &:hover {
     opacity: 0.8;
   }

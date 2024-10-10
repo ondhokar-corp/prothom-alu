@@ -1,21 +1,13 @@
-<div class="swiffy-slider slider-item-show3 slider-nav-light slider-nav-hidden slider-nav-inside slider-item-snapstart slider-nav-sm slider-indicators-square slider-indicators-outside slider-indicators-dark slider-nav-animation-slideup slider-nav-animation slider-item-first-visible slider-nav-autoplay slider-nav-autopause breaking-ticker" data-slider-nav-autoplay-interval="4000">
-  <div class="title">
-    <h3>এইমাত্র পাওয়া</h3>
-  </div>
-  <div class="slider-container">
-    {% for news in site.data.breaking %}
-    <div>
-      <div>
-        <p>
-          Today @ {{ news.time }}
-        </p>
-        <h4>
-          {{ news.title }}
-        </h4>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
 
-</div>
+  <div class="ticker-wrap">
+    <div class="ticker-heading">
+      Breaking News
+    </div>
+    <div class="ticker" style="animation-duration: 30s;">
+      {% for news in site.data.breaking %}
+      <div class="ticker__item">
+        {{ news.title }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>

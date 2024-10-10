@@ -3,6 +3,8 @@
   grid-template-columns: repeat(1, 1fr);
   gap: $gap-default;
   padding: $gap-default;
+  max-width: 1424px;
+  margin: 0 auto;
   article {
     position: relative;
     width: 100%;
@@ -43,7 +45,19 @@
     }
   }
   @media (min-width: $tab) {
+    grid-template-columns: repeat(2, 1fr);
+    article {
+      &:nth-child(3) {
+        grid-row: span 2;
+        //grid-column: span 2;
+      }
+    }
+  }
+  @media (min-width: $pc) {
     grid-template-columns: repeat(4, 1fr);
+    article:nth-child(3){
+      grid-row: span 1;
+    }
     article:first-child {
       grid-row: span 2;
       grid-column: span 2;
