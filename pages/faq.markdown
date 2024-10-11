@@ -28,3 +28,5 @@ permalink: /faq/
                                                 <li>এবং আরো অনেক কিছু!</li>
 											  </ul>
 </details>
+
+{% include ad-banner.html ad="banbill" %}

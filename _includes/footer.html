@@ -5,7 +5,14 @@
 
     <div class="grid">
       <div>
-            <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
+        <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
+        <p class="rss-subscribe">
+
+          <a href="{{ "/feed.xml" | relative_url }}">Feed
+            {% include icon.html icon="rss" %}
+
+          </a>
+        </p>
 
         {%- if site.email -%}
         <br>

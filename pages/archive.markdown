@@ -2,6 +2,7 @@
 layout: list
 title: Archive
 parmalink: /archive/
-pagination: 
+pagination:
   enabled: true
 ---
+
