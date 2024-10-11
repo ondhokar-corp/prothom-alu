@@ -5,4 +5,12 @@ footer {
   .logo {
     width: 200px;
   }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      papadding: 0;
+    }
+  }
 }

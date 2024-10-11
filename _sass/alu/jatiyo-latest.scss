@@ -10,10 +10,16 @@
   }
   .jatiyo {
     padding: 0 $gap-default;
+    .jatiyo-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $gap-default;
+    }
   }
   .latest-section {
     box-sizing: border-box;
-    margin-block-start: 4rem;
+    margin-block-start: $gap-default * 4;
+    border-inline-start: 4px solid $color-accent;
     .latest-heading {
       background-color: $color-accent;
       padding-block: $gap-default;
@@ -49,7 +55,7 @@
     .latest-section {
       margin: 0;
       padding-inline-start: 0;
-      border-inline-start: 2px solid $color-accent;
+
       .latest-heading {
         width: 51vw;
         padding: 0;

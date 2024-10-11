@@ -1,4 +1,4 @@
-<header>
+<header class="logo-header">
   <div class="tac">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}" class="header-logo-wrapper">
       <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
@@ -6,11 +6,11 @@
   </div>
 </header>
 <!-- {% include breaking-ticker.html %}  -->
-<nav>
+<nav class="main-nav">
   <div class="snazzymenu">
     <ul class="menu">
       <li class="menu-item-has-children">
-        <a href="">Nav Item</a>
+        <a href="">Categories</a>
         <ul class="sub-menu">
           <li class="menu-item-has-children">
             <a href="">Column Title</a>
@@ -20,7 +20,7 @@
               <li><a href="">Menu Item</a></li>
             </ul>
           </li>
-          <li><a href="">Column Title</a></li>
+          <li><a href="{{ "/archive/" | relative_url }}">Archive</a></li>
           <li><a href="">Column Title</a></li>
           <li><a href="">Column Title</a></li>
         </ul>

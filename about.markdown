@@ -1,20 +1,22 @@
 ---
 layout: page
-title: About
+title: আমাদের সম্পর্কে
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+আমরা, অন্ধকার কর্প, একটি বাংলাদেশী অলাভজনক(এখনকার জন্য) প্রতিষ্ঠান। দীর্ঘদিন বিভিন্ন সামাজিক যোগাযোগমাধ্যমে, এবং কিছুদিন বাস্তবে গবেষণা করে আমরা দেখেছি, দেশের জনগণের আয়রনি ও সার্কাজম বোঝার ক্ষমতা _খুব মাত্রায় বেশি_। অত্যধিক কোনো কিছুই মঙ্গলজনক নয়, সুতরাং আমাদের লক্ষ্য **দেশে আয়রনি ও সার্কাজম বোঝার মাত্রা সহনীয় পর্যায়ে আনা।** এই মহতী উদ্দেশ্যের লক্ষ্যেই প্রথম আলুর যাত্রা শুরু।
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+### প্রথম আলু কমিটি
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+- **সভাপতি:** নাম প্রকাশে অনিচ্ছুক
+- **সহ সভাপতি:** নাম প্রকাশে অনিচ্ছুক
+- **সম্পাদক:** নাম প্রকাশে অনিচ্ছুক
+- **সহ সম্পাদক:** নাম প্রকাশে অনিচ্ছুক
+- **সহ সম্পাদক:** নাম প্রকাশে অনিচ্ছুক
+- **সহ সম্পাদক:** নাম প্রকাশে অনিচ্ছুক
+- **সহ সম্পাদক:** নাম প্রকাশে অনিচ্ছুক
+- ও দেশ বিদেশের অসংখ্য সংবাদ প্রতিনিধি
 
+### প্রতিনিধি হতে চান?
 
-[jekyll-organization]: https://github.com/jekyll
-
-hi   
+অনুগ্রহপূর্বক ফেসবুকে যোগাযোগ করুন

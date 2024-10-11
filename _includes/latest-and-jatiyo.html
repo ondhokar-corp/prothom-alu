@@ -1,26 +1,23 @@
 {%- assign posts = include.posts | default: site.posts -%} {%- assign
 latest_posts = posts | slice: 0, 8 %} {% assign jatiyo_posts = site.posts |
-where: "categories", "জাতীয়" %} {% assign top_ten_posts = jatiyo_posts | slice:
-0, 10 %} {% assign midpoint = top_ten_posts | size | divided_by: 2 %} {% assign
-first_jatiyo = top_ten_posts | slice: 0, midpoint %} {% assign second_jatiyo =
-top_ten_posts | slice: midpoint, top_ten_posts.size %}
-
+where: "categories", "জাতীয়" %} {% assign jatiyo = jatiyo_posts | slice:
+0, 8 %}
 <section class="grid jatiyo-latest">
   <div class="jatiyo">
     <h4>
-      <a href="/categories/জাতীয়" class="category">জাতীয়</a>
+      <a href="{{ "/categories/জাতীয়" | relative_url }}" class="category">জাতীয়</a>
     </h4>
-    <div class="grid jatiyo-wrapper">
-      <div>
-        {%- for post in first_jatiyo -%}
-        <article class="news">
-          <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
-          {%- if post.cover.image -%}
-{% if post.cover.image contains 'http' %}
-  <img src="{{ post.cover.image }}" alt="{{ post.title }}">
-{% else %}
-  <img src="{{ post.url | relative_url | append: post.cover.image }}" alt="{{ post.title }}">
-{% endif %}
+    <div class="jatiyo-wrapper">
+
+      {%- for post in jatiyo -%}
+      <article class="news">
+        <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
+        {%- if post.cover.image -%}
+        {% if post.cover.image contains 'http' %}
+        <img src="{{ post.cover.image }}" alt="{{ post.title }}">
+        {% else %}
+        <img src="{{ post.url | relative_url | append: post.cover.image }}" alt="{{ post.title }}">
+        {% endif %}
 
         {%- else -%}
         <img src="{{ "/assets/images/default/thumb.png"  | relative_url }}" alt="Thumbnail" />
@@ -37,51 +34,26 @@ top_ten_posts | slice: midpoint, top_ten_posts.size %}
       post.excerpt }} {%- endif -%}
     </article>
     {%- endfor -%}
+
   </div>
-  <div>
-    {%- for post in second_jatiyo -%}
-    <article class="news">
-      <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
-      {%- if post.cover.image -%}
-      <img
-      src="{{ post.cover.image }}"
-      alt="{{ post.cover.alt }}"
-      />
-    {%- else -%}
-    <img src="{{ "/assets/images/default/thumb.png" | relative_url }}" alt="Thumbnail" />
-  {%- endif -%}
-  <h5>
-    <a
-      class="post-link"
-      href="{{ post.url | relative_url }}"
-      >
-      {{ post.title | escape }}
-    </a>
-  </h5>
-  {%- if post.excerpts or site.show_excerpts -%} {{
-  post.excerpt }} {%- endif -%}
-</article>
-{%- endfor -%}
-</div>
-</div>
 </div>
 <aside class="latest-section">
-<div class="latest-heading">
-<h4>সর্বশেষ</h4>
-</div>
-<div class="latest-wrapper">
-{%- for post in latest_posts -%}
-<article class="news">
-<p class="post-meta">
-{{ post.date | bangla_date }}
-</p>
-<h5>
-<a class="post-link" href="{{ post.url | relative_url }}">
-{{ post.title | escape }}
-</a>
-</h5>
-</article>
-{%- endfor -%}
-</div>
+  <div class="latest-heading">
+    <h4>সর্বশেষ</h4>
+  </div>
+  <div class="latest-wrapper">
+    {%- for post in latest_posts -%}
+    <article class="news">
+      <p class="post-meta">
+        {{ post.date | bangla_date }}
+      </p>
+      <h5>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h5>
+    </article>
+    {%- endfor -%}
+  </div>
 </aside>
 </section>

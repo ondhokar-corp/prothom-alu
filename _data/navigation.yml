@@ -1,0 +1,7 @@
+pages:
+  - title: "আমাদের সম্পর্কে"
+    href: "/about/"
+  - title: "ফাক(FAQ)"
+    href: "/faq/"
+  - title: প্রাইভেসি পলিসি
+    href: /privacy-policy/

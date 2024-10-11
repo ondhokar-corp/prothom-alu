@@ -8,20 +8,28 @@ layout: default_fluid
     <div class="container">
 
 
-      <a itemprop="category" href="/news/{{ page.categories[1] }}" class="category"><span class="p-category h-card" itemprop="category">{{ page.categories.last }}</span></a>
+      <a itemprop="category" href="{{ "/categories/" | append: page.categories.last  | relative_url }}" class="category"><span class="p-category h-card" itemprop="category">{{ page.categories.last }}</span></a>
 
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
 
 
       <p class="post-meta">
-        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {{ page.date |  bangla_date }}
-        </time>
+        <span class="post-meta__item">
+          {% include icon.html icon="calendar" %}
+
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+
+            {{ page.date |  bangla_date }}
+          </time>
+        </span>
         {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        <span class="post-meta__item">
+          {% include icon.html icon="pen-tool" %} <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        </span>
         {%- endif -%}
         {%- if page.place -%}
-        <span></span> • <span itemprop="place" itemscope itemtype="http://schema.org/Place"><span class="p-place h-card" itemprop="place">{{ page.place }}</span></span>
+        <span class="post-meta__item">  {% include icon.html icon="map-pin" %} <span itemprop="place" itemscope itemtype="http://schema.org/Place"><span class="p-place h-card" itemprop="place">{{ page.place }}</span></span>
+        </span>
         {%- endif -%}
       </p>
       {% if page.cover.image %}

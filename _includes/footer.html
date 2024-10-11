@@ -3,9 +3,8 @@
 
   <div class="container">
     <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
-    <div class="row">
-      <div class="one-third column">
-
+    <div class="grid">
+      <div>
         {%- if site.author -%}
         {{ site.author | escape }}
         {%- else -%}
@@ -15,39 +14,50 @@
         <br>
         <a class="" href="mailto:{{ site.email }}">{{ site.email }}</a>
         {%- endif -%}
-
-
       </div>
 
-      <div class="one-third column">
-        {%- include social.html -%}
+      <div class="grid grid-2">
+        <div>
+          <h5>মূল লিংকসমূহ</h5>
+          <ul>
+            {% for page in site.data.navigation.pages %}
+            <li>
+              <a href="{{ page.href | relative_url }}">{{ page.title }}</a>
+            </li>
+
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h5>খবর</h5>
+          <ul>
+            {% for category in site.categories %}
+            {% if category[0] != "p" and category[0] != "News" %}
+            <li>
+              <a href="{{ "/categories/" | append: category[0] | relative_url }}">{{ category[0] }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
-      <div class="one-third column">
+      <div>
         <p>
           {{- site.description | escape -}}
         </p>
-        <!--
-                      <p>
-                        We are looking for reporters with limitless creativity and humongous humor, capable of writing next gen satirical news articles. Contact us to be a part of the Alu family. You will get:
-                      </p>
-                      <ul>
-                        <li>A camera (On your phone)</li>
-                        <li>Handsome salary ($0/month)</li>
-                        <li>Name and fame</li>
-                        <li>A cute partner (Imaginary)</li>
-                        <li>And so on.</li>
-                      </ul>
-                      -->
+
       </div>
     </div>
 
   </div>
 
 </footer>
-
-<script type="text/javascript" src="{{ "/assets/js/snazzymenu.min.js" | relative_url }} "></script>
+<script type="text/javascript" src="{{ "/assets/js/feather.min.js" | relative_url }} "></script>
+<script type="text/javascript" src="{{ "/assets/js/snazzymenu.min.js" | relative_url }} ">
+</script>
 <script>
+  feather.replace();
   const snazzy_opt = {
     theme: 'light',
   }

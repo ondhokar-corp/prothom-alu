@@ -1,0 +1,12 @@
+@media print {
+  html {
+    font-size: 12pt;
+  }
+  .post main {
+    width: 100% !important;
+  }
+  .main-nav,
+  .logo-header {
+    display: none !important;
+  }
+}

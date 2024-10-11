@@ -12,8 +12,8 @@ article {
     header {
       background-color: $color-accent;
       width: 100% !important;
-      margin-block-end: $gap-default * 3;
-      padding-block-start: $gap-default * 3;
+      margin-block-end: $gap-default;
+      padding-block: $gap-default * 3 $gap-default;
       .container {
         position: relative;
       }
@@ -23,6 +23,9 @@ article {
       .post-meta {
         margin: 0;
         opacity: 0.6;
+        &__item {
+          margin-inline-end: calc($gap-default/2);
+        }
       }
       img {
         width: 100%;
@@ -37,7 +40,7 @@ article {
       }
     }
     main {
-      margin-block-start: $gap-default * 6;
+      margin-block-start: $gap-default;
       max-width: 60ch;
       text-align: justify;
       a {
@@ -56,6 +59,14 @@ article {
         p {
           margin: 0;
         }
+      }
+    }
+    :has(img) {
+      + header {
+        margin-block-end: $gap-default * 4;
+      }
+      + main {
+        margin-block-start: $gap-default * 8 !important;
       }
     }
   }
