@@ -1,13 +1,20 @@
+<div class="ticker-wrap">
+  <div class="ticker-heading">
 
-  <div class="ticker-wrap">
-    <div class="ticker-heading">
-      Breaking News
+    ব্রেকিং
+  </div>
+  {% assign multiplier = 8 %}
+  {% assign element_count = site.data.breaking | size %}
+  {% assign total = element_count | times: multiplier %}
+
+  <div class="ticker" style="animation-duration: {{ total }}s;">
+    {% for news in site.data.breaking %}
+    <div class="ticker__item">
+      {{ news.title }}
     </div>
-    <div class="ticker" style="animation-duration: 30s;">
-      {% for news in site.data.breaking %}
-      <div class="ticker__item">
-        {{ news.title }}
-      </div>
-      {% endfor %}
+    {% endfor %}
+    <div class="ticker__item empty">
+
     </div>
   </div>
+</div>

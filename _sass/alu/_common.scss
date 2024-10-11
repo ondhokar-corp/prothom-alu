@@ -37,7 +37,7 @@ section {
   height: 16px;
   display: inline-block;
   fill: #aaa;
-  padding-right: $gap-default/2;
+  padding-right: calc($gap-default/2);
   vertical-align: text-top;
 }
 .container {
@@ -50,9 +50,9 @@ section {
   grid-row-gap: $gap-default;
   display: grid;
   grid-template-columns: 1fr;
- &-2{
-   grid-template-columns: 1fr 1fr;
- }
+  &-2 {
+    grid-template-columns: 1fr 1fr;
+  }
   @media (min-width: $tab) {
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
   }
@@ -70,6 +70,7 @@ section {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+  vertical-align: text-top;
 }
 
 details {
