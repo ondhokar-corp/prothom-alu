@@ -20,7 +20,7 @@
 
 title: প্রথম আলু
 description: >- # this means to ignore newlines until "baseurl:"
-  শুধু বিনোদনের জন্য **প্রথম আলু**র জন্ম। এই সাইটের কোনো নিউজের সাথে বাস্তবতার কোনো মিল নেই। কোনো প্রতিবেদনের সাথে বাস্তবতা মিলে গেলে তা নেহাতই কাকতালীয়।
+  শুধু বিনোদনের জন্য প্রথম আলুর জন্ম। এই সাইটের কোনো নিউজের সাথে বাস্তবতার কোনো মিল নেই। কোনো প্রতিবেদনের সাথে বাস্তবতা মিলে গেলে তা নেহাতই কাকতালীয়।
 baseurl: "/prothom-alu"
 url: "ondhokar-corp.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 theme: minima
@@ -53,7 +53,7 @@ exclude:
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set
-# Due to us using the categories for posts then it is advisable to explicitly specify a 
+# Due to us using the categories for posts then it is advisable to explicitly specify a
 # permalink structure for the site. Otherwise Jekyll attempts to organize the pages in folders
 # by the category names and it doesn't understand multi-categories to well :/
 permalink: /:year/:month/:title/
@@ -63,9 +63,8 @@ permalink: /:year/:month/:title/
 pagination:
   enabled: true
   per_page: 9
-  permalink: '/page/:num/'
-  title: ':title'
+  permalink: "/page/:num/"
+  title: ":title"
   limit: 0
-  sort_field: 'date'
+  sort_field: "date"
   sort_reverse: true
-

@@ -2,14 +2,11 @@
   <data class="" href="{{ "/" | relative_url }}"></data>
 
   <div class="container">
-    <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
+
     <div class="grid">
       <div>
-        {%- if site.author -%}
-        {{ site.author | escape }}
-        {%- else -%}
-        {{ site.title | escape }}
-        {%- endif -%}
+            <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
+
         {%- if site.email -%}
         <br>
         <a class="" href="mailto:{{ site.email }}">{{ site.email }}</a>
