@@ -14,9 +14,6 @@ layout: default_fluid
 
 
       <p class="post-meta">
-        <span class="post-meta__item" id="visit count">
-          ...
-        </span>
         <span class="post-meta__item">
           {% include icon.html icon="calendar" %}
 
@@ -51,45 +48,3 @@ layout: default_fluid
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
-
-
-
-<script>
-  const namespace = 'prothom-alu';
-  const postId = "{{
-    page.url
-  }}";
-  const baseUrl = 'https://letscountapi.com';
-
-  // Function to get the current visit count
-  async function getVisitCount() {
-    try {
-      const response = await fetch(`${baseUrl}/${namespace}/${postId}`);
-      const data = await response.json();
-      document.getElementById('visit-count').innerText = `Visits: ${data.current_value}`;
-    } catch (error) {
-      console.error('Error fetching visit count:', error);
-    }
-  }
-
-  // Function to increment the visit count
-  async function incrementVisitCount() {
-    try {
-      await fetch(`${baseUrl}/${namespace}/${postId}/increment`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-    } catch (error) {
-      console.error('Error incrementing visit count:', error);
-    }
-  }
-
-  // On page load, increment the visit count and fetch the current value
-  window.onload = async () => {
-    await incrementVisitCount();
-    getVisitCount();
-  };
-</script>
