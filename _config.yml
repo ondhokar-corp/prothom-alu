@@ -113,3 +113,7 @@ autopages:
     slugify:
       mode: "default" # :tag is slugified.
       case: false1
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true

@@ -41,7 +41,7 @@ a {
   }
 }
 section {
-  margin-block: 5rem !important;
+  margin-block: $gap-default * 5 !important;
 }
 .svg-icon {
   width: 16px;

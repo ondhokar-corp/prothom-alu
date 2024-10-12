@@ -4,12 +4,32 @@ header.logo-header {
     display: flex;
     width: 100%;
     justify-content: center;
-    a {
+    align-items: center;
+    gap: $gap-default * 4;
+
+    a.site-title {
       display: block;
-      padding: $gap-default;
+      //  padding: $gap-default;
     }
     img {
       max-width: 256px;
+      padding: $gap-default;
+    }
+    .latest-news {
+      display: none;
+    }
+  }
+  @media (min-width: $pc) {
+    .tac {
+      max-width: 1442px;
+      margin: 0 auto;
+      height: 20vh;
+      .latest-news {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $gap-default * 3;
+        padding-inline-end: $gap-default;
+      }
     }
   }
 }
