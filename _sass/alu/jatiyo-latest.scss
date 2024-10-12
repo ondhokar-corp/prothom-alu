@@ -2,7 +2,7 @@
   margin: 0 auto;
   box-sizing: border-box !important;
   gap: $gap-default;
-  border-block-end: 2px solid $color-accent;
+  border-block-end: 2px solid $color-primary;
 
   h4 {
     // padding: 0 $gap-default;
@@ -19,14 +19,14 @@
   .latest-section {
     box-sizing: border-box;
     margin-block-start: $gap-default * 4;
-    border-inline-start: 4px solid $color-accent;
+    border-inline-start: 4px solid $color-primary;
     .latest-heading {
-      background-color: $color-accent;
+      background-color: $color-primary;
       padding-block: $gap-default;
       h4 {
         padding-inline-start: $gap-default;
         margin: 0;
-        color: readable-color($color-accent);
+        color: readable-color($color-primary);
       }
     }
     .latest-wrapper {
@@ -35,7 +35,7 @@
       }
       article {
         padding: $gap-default * 2 $gap-default;
-        border-block-end: 1px solid $color-accent;
+        border-block-end: 1px solid $color-primary;
         &:last-child {
           border-block-end: 0;
         }

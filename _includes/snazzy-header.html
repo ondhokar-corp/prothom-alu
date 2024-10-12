@@ -5,7 +5,7 @@
     </a>
   </div>
 </header>
- {% include breaking-ticker.html %}
+{% include breaking-ticker.html %}
 <nav class="main-nav">
   <div class="snazzymenu">
     <ul class="menu">
@@ -15,9 +15,11 @@
           <li class="menu-item-has-children">
             <a href="">Column Title</a>
             <ul class="sub-menu">
-              <li><a href="">Menu Item</a></li>
-              <li><a href="">Menu Item</a></li>
-              <li><a href="">Menu Item</a></li>
+              {% for page in site.data.navigation.pages %}
+              <li>
+                <a href="{{ page.href | relative_url }}">{{ page.title }}</a>
+              </li>
+              {% endfor %}
             </ul>
           </li>
           <li><a href="{{ "/archive/" | relative_url }}">Archive</a></li>

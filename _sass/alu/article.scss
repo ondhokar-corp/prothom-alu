@@ -10,27 +10,40 @@ article {
   }
   &.post {
     header {
-      background-color: $color-accent;
+      background-color: $color-primary;
+
       width: 100% !important;
-      margin-block-end: $gap-default;
       padding-block: $gap-default * 3 $gap-default;
       .container {
         position: relative;
       }
-      a {
+      a.category,
+      .subcategory {
         font-size: $h5-font-size;
       }
+
       .post-meta {
         margin: 0;
-        opacity: 0.6;
+        opacity: 0.8;
         &__item {
           margin-inline-end: calc($gap-default/2);
         }
       }
-      img {
+      figure {
         width: 100%;
         margin-block-end: $gap-default * -5;
         z-index: -111;
+
+        img {
+          width: 100%;
+        }
+        p {
+          text-align: center;
+          color: readable-color(#fff);
+          .credit {
+            margin-inline-start: $gap-default;
+          }
+        }
       }
       h1 {
         margin-block: 0;
@@ -38,35 +51,46 @@ article {
       p {
         margin: 0;
       }
-    }
-    main {
-      margin-block-start: $gap-default;
-      max-width: 60ch;
-      text-align: justify;
-      a {
-        text-decoration: underline;
+      h1,
+      p {
+        color: readable-color($color-primary);
       }
-      blockquote {
-        border-right: solid 4px $color-success;
-        background-color: rgba($color-success, 0.1);
-        color: $color-dark;
-        padding: $gap-default;
-        margin: 10px 0 10px 20px;
-        width: 50%;
-        font-style: italic;
-        text-align: right;
-        float: right;
-        p {
-          margin: 0;
+      .feather {
+        stroke: readable-color($color-primary);
+      }
+    }
+    .post-body-wrapper {
+      background-color: #fff;
+
+      main {
+        padding-block-start: $gap-default;
+        max-width: 60ch;
+        text-align: justify;
+        a {
+          text-decoration: underline;
+        }
+        blockquote {
+          border-left: solid 4px $color-info;
+          background-color: rgba($color-info, 0.1);
+          color: readable-color($color-info);
+          padding: $gap-default;
+          margin: 10px 0 10px 20px;
+          width: 50%;
+          font-style: italic;
+          text-align: right;
+          float: right;
+          p {
+            margin: 0;
+          }
         }
       }
     }
-    :has(img) {
+    :has(figure) {
       + header {
         margin-block-end: $gap-default * 4;
       }
-      + main {
-        margin-block-start: $gap-default * 8 !important;
+      + .post-body-wrapper > main {
+        padding-block-start: $gap-default * 5 !important;
       }
     }
   }

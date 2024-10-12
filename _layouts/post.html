@@ -1,15 +1,26 @@
 ---
 layout: default_fluid
 ---
+{% assign filtered_categories = page.categories %}
+{% assign filtered_categories = filtered_categories | where_exp: "item", "item != 'p' and item != 'News'" %}
+
+
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+
     <div class="container">
+      {% for cat in filtered_categories %}
 
+      {% if forloop.first %}
+      {% assign cls = 'category' %}
+      {% else %}
+      {% assign cls = 'category subcategory' %}
+      {% endif %}
+      <a itemprop="category" href="{{ "/category/" | append: cat  | relative_url }}" class="{{ cls }}"><span class="p-category h-card" itemprop="category">{{ cat }}</span></a>
 
-      <a itemprop="category" href="{{ "/categories/" | append: page.categories.last  | relative_url }}" class="category"><span class="p-category h-card" itemprop="category">{{ page.categories.last }}</span></a>
-
+      {% endfor %}
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
 
 
@@ -33,18 +44,40 @@ layout: default_fluid
         {%- endif -%}
       </p>
       {% if page.cover.image %}
-      <img src="{{ page.cover.image }}" alt="{{ page.cover.alt }}" class="cover-image">
-      {% endif %}
-    </div>
-  </header>
+      <figure>
+        <img src="{{ page.cover.image }}" alt="{{ page.cover.alt }}" class="cover-image" />
+      <caption>
+        <p>
+        {{ page.cover.caption }}
+        {% if page.cover.credit %}
+        <span class="credit">
+          | {{ page.cover.credit }}
+          {% else %}
+          | ছবি: সংগৃহীত
+        </span>
+        {% endif %}
+        </p>
+      </caption>
+    </figure>
+    {% endif %}
+  </div>
+</header>
+<div class="post-body-wrapper">
+
 
   <main class="post-content container e-content" itemprop="articleBody">
     {{ content }}
+
+    {% if page.tags %}
+    {% for tag in page.tags %}
+    <a href="{{ "/tag/" | append: tag  | relative_url }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+    {% endif %}
   </main>
+</div>
+{%- if site.disqus.shortname -%}
+{%- include disqus_comments.html -%}
+{%- endif -%}
 
-  {%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

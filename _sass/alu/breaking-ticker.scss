@@ -22,24 +22,25 @@
 }
 
 @keyframes blink-animation {
-    0%, 100% {
-        opacity: 1; /* Fully visible */
-    }
-    50% {
-        opacity: 0; /* Fully transparent */
-    }
+  0%,
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Fully transparent */
+  }
 }
 
 .ticker-heading {
   position: absolute;
-  background: $color-accent;
+  background: $color-accent2;
   display: block;
   left: 0;
   top: 0;
   height: 2.5rem;
   padding: 11px 10px;
   z-index: 2;
-  color: readable-color($color-accent);
+  color: readable-color($color-accent2);
   text-transform: uppercase;
   font-size: 0.875rem;
 }
@@ -50,7 +51,7 @@
   height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-left: 11px solid $color-accent;
+  border-left: 11px solid $color-accent2;
   position: absolute;
   margin-left: 10px;
 }
@@ -97,7 +98,7 @@
       height: 11px;
       width: 11px;
       display: inline-block;
-      background-color: $color-primary;
+      background-color: $color-info;
       border-radius: 100%;
       position: relative;
       margin-right: 5px;

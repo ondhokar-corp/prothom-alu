@@ -13,7 +13,18 @@
 
           </a>
         </p>
+        <h5>ট্যাগ</h5>
+        <ul class="tag-cloud">
 
+          {% for tag in site.tags limit:15 %}
+          {% assign tag_count = tag[1].size %}
+          <li>
+            <a href="{{ "/tag/" | append: tag[0] | relative_url }}" style="font-size: clamp(0.7rem, calc(1rem + (2 * {{ tag_count }}px)), 2rem);" class="tag">
+              #{{ tag[0] }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
         {%- if site.email -%}
         <br>
         <a class="" href="mailto:{{ site.email }}">{{ site.email }}</a>
@@ -35,12 +46,11 @@
         <div>
           <h5>খবর</h5>
           <ul>
-            {% for category in site.categories %}
-            {% if category[0] != "p" and category[0] != "News" %}
+            {% for category in site.data.navigation.categories %}
             <li>
-              <a href="{{ "/categories/" | append: category[0] | relative_url }}">{{ category[0] }}</a>
+              <a href="{{ "/category/" | append: category | relative_url }}">{{ category }}</a>
             </li>
-            {% endif %}
+
             {% endfor %}
           </ul>
         </div>
@@ -57,6 +67,9 @@
   </div>
 
 </footer>
+
+
+
 <script type="text/javascript" src="{{ "/assets/js/feather.min.js" | relative_url }} "></script>
 <script type="text/javascript" src="{{ "/assets/js/snazzymenu.min.js" | relative_url }} ">
 </script>
