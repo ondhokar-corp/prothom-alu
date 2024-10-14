@@ -46,9 +46,10 @@
         <div>
           <h5>খবর</h5>
           <ul>
-            {% for category in site.data.navigation.categories %}
+            {% for category in site.data.alucats %}
             <li>
-              <a href="{{ "/category/" | append: category | relative_url }}">{{ category }}</a>
+              <a href="{{ "/category/" | append: category.title | relative_url }}">{{ category.title }}
+              </a>
             </li>
 
             {% endfor %}
@@ -67,7 +68,6 @@
   </div>
 
 </footer>
-
 
 
 <script type="text/javascript" src="{{ "/assets/js/feather.min.js" | relative_url }} "></script>

@@ -1,4 +1,5 @@
 .hero-wrapper {
+  overflow: hidden;
   background-color: $color-primary;
   margin-block-start: $gap-default !important;
   padding-block: $gap-default * 5;
@@ -8,7 +9,7 @@
     gap: $gap-default;
     max-width: 1424px;
     margin: 0 auto;
-padding-inline: $gap-default;
+    padding-inline: $gap-default;
     article {
       position: relative;
       width: 100%;
@@ -19,6 +20,7 @@ padding-inline: $gap-default;
           background-color: $color-accent;
           color: readable-color($color-accent);
           padding-inline: $gap-default;
+          margin-inline-start: - $gap-default;
         }
       }
 
@@ -42,8 +44,9 @@ padding-inline: $gap-default;
           left: 0;
           .title {
             display: inline;
-            background-color: $color-light;
-            color: $color-dark;
+            padding-inline-start: $gap-default;
+            background-color: $color-primary;
+            color: readable-color($color-primary);
           }
         }
       }

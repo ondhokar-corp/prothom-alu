@@ -1,0 +1,18 @@
+<header class="logo-header">
+  <div class="tac">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" class="header-logo-wrapper">
+      <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="logo">
+    </a>
+    <div class="latest-news">
+      {% for post in site.posts limit:3 %}
+      <div>
+        <a href="{{ post.url | relative_url }}">
+          {{post.title}}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</header>
+
+{% include breaking-ticker.html %}

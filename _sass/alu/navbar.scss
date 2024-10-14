@@ -1,0 +1,107 @@
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0;
+}
+
+/* Links inside the navbar */
+.navbar a.nav-link {
+  float: left;
+  padding: calc($gap-default/2) $gap-default;
+  text-align: center;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: calc($gap-default/2) $gap-default;
+  background-color: inherit;
+  font: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a $color-accent background color to navbar links on hover */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: $color-primary;
+  color: readable-color($color-primary);
+}
+.dropdown:hover .dropbtn .feather {
+  stroke: readable-color($color-primary);
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  overflow: hidden;
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.02);
+  z-index: 1;
+  padding-inline: $gap-default;
+}
+
+/* Mega Menu header, if needed */
+.dropdown-content .header {
+  background: $color-primary;
+  padding: $gap-default;
+  color: readable-color($color-primary);
+  h4 {
+    margin: 0;
+  }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  padding: $gap-default;
+  height: auto;
+}
+
+/* Style links inside the columns */
+.column a {
+  float: none;
+  display: inline-block;
+  text-align: left;
+
+  h5 {
+    margin: 0;
+  }
+}
+
+/* Add a background color on hover */
+.column a:hover {
+  // background-color: #ddd;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (min-width: $tab) {
+  .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

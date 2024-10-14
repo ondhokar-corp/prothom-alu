@@ -1,0 +1,54 @@
+---
+layout: default_fluid
+---
+{% assign posts = paginator.posts %}
+{% assign num = paginator.page | bangla_number %}
+{% assign title = page.title | append: " - পৃষ্ঠা " | append: num %}
+<section class="photocard">
+  {% for post in posts%}
+  <article class="photocard__article">
+    {% if post.cover.image %}
+    <img src="{{"/assets/images/default/logo.png" | relative_url }}" alt="" class="photocard__article-logo" />
+  <figure class="photocard__article-cover">
+    {% if post.cover.image contains 'http' %}
+    <img src="{{ post.cover.image }}" alt="{{ post.title }}">
+    {% else %}
+    <img src="{{ post.url | relative_url | append: post.cover.image }}" alt="{{ post.title }}">
+    {% endif %}
+  </figure>
+  {% endif %}
+  <div class="photocard__article-info">
+    <h2 class="photocard__article-info-title">{{ post.title }}</h2>
+    <p class="photocard__article-info-meta">
+      <span>
+        {% include icon.html icon="calendar" %}
+
+        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+
+          {{ post.date |  bangla_date }}
+        </time>
+      </span>
+      <br>
+      <span class="small">
+        বিস্তারিত কমেন্টে...
+      </span>
+      
+    </p>
+  </div>
+</article>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; আগের খবর</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">পূর্বের খবর&rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+</section>

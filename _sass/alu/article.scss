@@ -95,3 +95,39 @@ article {
     }
   }
 }
+
+.photocard {
+  max-width: $container-width;
+  margin: 0 auto;
+  position: relative;
+  &__article {
+    margin-block-end: $gap-default;
+    text-align: center;
+    &-logo {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      background-color: rgba($color-success, 0.85);
+      padding: 8px;
+      border-radius: 0 0 8px 0;
+    }
+    &-cover {
+      width: 100% !important;
+    }
+    &-info {
+      background-color: $color-primary;
+      color: readable-color($color-primary);
+      padding: $gap-default;
+      &-title {
+        color: readable-color($color-primary);
+      }
+      &-meta,
+      &-title {
+        margin: 0;
+      }
+      .feather {
+        stroke: readable-color($color-primary);
+      }
+    }
+  }
+}

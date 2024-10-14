@@ -1,0 +1,52 @@
+<div class="navbar">
+  <a class="nav-link" href="/">
+    {% include icon.html icon="home" %}
+  </a>
+
+  <div class="dropdown">
+    <button class="dropbtn">
+      {% include icon.html icon="menu" %}
+    </button>
+    <div class="dropdown-content">
+      <div class="tabbed">
+        <input type="radio" id="tab1" name="css-tabs" checked>
+        <input type="radio" id="tab2" name="css-tabs">
+        <input type="radio" id="tab3" name="css-tabs">
+
+        <ul class="tabs">
+          <li class="tab"><label for="tab1">ক্যাটাগরি</label></li>
+          <li class="tab"><label for="tab2">ট্যাগ</label></li>
+        </ul>
+        <div class="tab-content">
+          <div class="row">
+            {% for category in site.data.alucats %}
+            <div class="column">
+              <div>
+                <a class="category" href="{{ "/category/" | append: category.title | relative_url }}">
+                  <h5>{{ category.title }}</h5>
+                </a>
+              </div>
+              {% for subcat in category.subcategories %}
+              <div>
+                <a class="subcat" href="#">{{ subcat }}</a>
+              </div>
+              {% endfor%}
+            </div>
+            {% endfor%}
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="row">
+            <div class="column">
+              {% for tag in site.tags limit:20 %}
+              <a class="tag" href="{{ "/tag/" | append: tag[0] | relative_url }}">
+                <h5>#{{ tag[0] }}</h5>
+              </a>
+              {% endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
