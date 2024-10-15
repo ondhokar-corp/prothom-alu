@@ -10,3 +10,9 @@
 // });
 
 // snazzymenu
+
+console.log("Hi from Alu");
+function dummy() {
+  console.log("BOAT");
+}
+feather.replace();

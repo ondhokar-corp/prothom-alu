@@ -27,6 +27,8 @@ theme: minima
 # Build settings
 plugins:
   - jekyll-feed
+#  - jekyll-html-minifier
+
 gems:
   - jekyll-paginate-v2
 # Exclude from processing.

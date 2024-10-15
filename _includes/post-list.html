@@ -12,10 +12,10 @@
   <div class="{{ cls }}">
     {%- assign posts = include.posts | default: site.posts -%}
     {%- assign post_limit = include.post_limit | default: site.pagination.per_page -%}
-    {%- assign limited_posts = posts | slice: 0, post_limit -%} <!-- Limit posts to the specified number -->
+    {%- assign limited_posts = posts | slice: 0, post_limit -%} {%- comment -%} Limit posts to the specified number {%- endcomment -%}
     {%- for post in limited_posts -%}
     <article class="news">
-      <!--     <span class="post-meta">{{ post.date | bangla_date }}</span> -->
+      {%- comment -%}     <span class="post-meta">{{ post.date | bangla_date }}</span> {%- endcomment -%}
       {%- if post.cover.image -%}
 
 {% if post.cover.image contains 'http' %}
