@@ -51,7 +51,7 @@
         }
       }
     }
-    @media (min-width: $tab) {
+    @include tab {
       grid-template-columns: repeat(2, 1fr);
       article {
         &:nth-child(3) {
@@ -60,7 +60,7 @@
         }
       }
     }
-    @media (min-width: $pc) {
+    @include pc {
       grid-template-columns: repeat(4, 1fr);
       article:nth-child(3) {
         grid-row: span 1;

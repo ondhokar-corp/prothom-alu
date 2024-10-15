@@ -13,6 +13,7 @@ layout: default
     Showing buttons to move to the next and to the previous list of posts (pager buttons).
   {%- endcomment -%}
 {% if paginator.total_pages > 1 %}
+<nav class="pagination">
 <ul class="pager">
   {% if paginator.previous_page %}
   <li class="previous">
@@ -25,5 +26,6 @@ layout: default
   </li>
   {% endif %}
 </ul>
+</nav>
 {% endif %}
 </section>

@@ -1,17 +1,33 @@
-@function readable-color(
-  $background
-) {
-  // Calculate the relative luminance of the background color
-  $r: calc(red($background) / 255);
-  $g: calc(green($background) / 255);
-  $b: calc(blue($background) / 255);
+/// Get a white or black contrast color for any color (on WCAG standards).
+/// Thanks for David Halford for this function: https://codepen.io/davidhalford/pen/ALrbEP
+/// @param {color} $color - The color to get the contrast color.
+/// @return {color} - The contrast color.
+@function readable-color($color) {
+  $color-brightness: math.round(
+    (color.red($color) * 299) + (color.green($color) * 587) +
+      math.div(color.blue($color) * 114, 1000)
+  );
+  $light-color: math.round(
+    (color.red(#fff) * 299) + (color.green(#fff) * 587) +
+      math.div(color.blue(#fff) * 114, 1000)
+  );
 
-  $r: if($r < 0.03928, $r / 12.92, pow(($r + 0.055) / 1.055, 2.4));
-  $g: if($g < 0.03928, $g / 12.92, pow(($g + 0.055) / 1.055, 2.4));
-  $b: if($b < 0.03928, $b / 12.92, pow(($b + 0.055) / 1.055, 2.4));
+  @if abs($color-brightness) < math.div($light-color, 2) {
+    @return hsl(0 0% 100%);
+  } @else {
+    @return hsl(0 100% 0%);
+  }
+}
 
-  $luminance: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 
-  // Return the light color if the luminance is low, otherwise return the dark color
-  @return if($luminance > 0.279, $color-dark, $color-light);
+@mixin tab {
+  @media only screen and (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media only screen and (min-width: $pc) {
+    @content;
+  }
 }

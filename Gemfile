@@ -6,7 +6,6 @@ gem "rackup"
 gem "htmlcompressor"
 gem "uglifier"
 
-gem "sass-globbing"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
@@ -15,6 +14,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate-v2", ">= 3.0"
   gem "jekyll-feed"
   gem 'jekyll-postfiles'
+  gem "jekyll-seo-tag"
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"

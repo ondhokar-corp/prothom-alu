@@ -18,7 +18,7 @@ $h6-font-size: 1rem;
 html {
   font-size: 16px;
   line-height: 1.7;
-  @media (min-width: $pc) {
+  @include pc {
     font-size: 20px;
   }
 }

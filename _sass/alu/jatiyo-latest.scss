@@ -12,9 +12,14 @@
   .jatiyo {
     padding: 0 $gap-default;
     .jatiyo-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: $gap-default;
+      // display: grid;
+      //grid-template-columns: repeat(2, 1fr);
+      //   gap: $gap-default;
+      columns: 2 auto;
+      column-gap: $gap-default;
+      article {
+        width: 100%;
+      }
     }
   }
   .latest-section {
@@ -45,7 +50,7 @@
   }
 }
 
-@media (min-width: $tab) {
+@include tab {
   .jatiyo-latest {
     // width: 100% !important;
     max-width: $container-width;

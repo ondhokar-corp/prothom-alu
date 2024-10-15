@@ -17,16 +17,17 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
+version: "1.1.6"
 title: প্রথম আলু
 description: >- # this means to ignore newlines until "baseurl:"
   শুধু বিনোদনের জন্য প্রথম আলুর জন্ম। এই সাইটের কোনো নিউজের সাথে বাস্তবতার কোনো মিল নেই। কোনো প্রতিবেদনের সাথে বাস্তবতা মিলে গেলে তা নেহাতই কাকতালীয়।
 baseurl: ""
 url: "https://prothomalu.is-local.org" # the base hostname & protocol for your site, e.g. http://example.com
-theme: minima
+#theme: minima
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 #  - jekyll-html-minifier
 
 gems:

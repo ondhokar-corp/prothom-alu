@@ -14,9 +14,9 @@ layout: default_fluid
       {% for cat in filtered_categories %}
 
       {% if forloop.first %}
-      {% assign cls = 'category' %}
+      {% assign cls = 'category category-light' %}
       {% else %}
-      {% assign cls = 'category subcategory' %}
+      {% assign cls = 'category category-light category-sub' %}
       {% endif %}
       <a itemprop="category" href="{{ "/category/" | append: cat  | relative_url }}" class="{{ cls }}"><span class="p-category h-card" itemprop="category">{{ cat }}</span></a>
 
@@ -48,14 +48,14 @@ layout: default_fluid
         <img src="{{ page.cover.image }}" alt="{{ page.cover.alt }}" class="cover-image" />
       <caption>
         <p>
-        {{ page.cover.caption }}
-        {% if page.cover.credit %}
-        <span class="credit">
-          | {{ page.cover.credit }}
-          {% else %}
-          | ছবি: সংগৃহীত
-        </span>
-        {% endif %}
+          {{ page.cover.caption }}
+          {% if page.cover.credit %}
+          <span class="credit">
+            | {{ page.cover.credit }}
+            {% else %}
+            | ছবি: সংগৃহীত
+          </span>
+          {% endif %}
         </p>
       </caption>
     </figure>

@@ -19,7 +19,7 @@ header.logo-header {
       display: none;
     }
   }
-  @media (min-width: $pc) {
+  @include pc {
     .tac {
       max-width: 1442px;
       margin: 0 auto;

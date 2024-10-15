@@ -2,8 +2,6 @@
   //border: 1px solid red;
 }
 body {
-  width: 100%;
-  height: 100%;
   box-sizing: border-box !important;
   background-color: $color-light;
 }
@@ -19,12 +17,12 @@ a {
   text-decoration: none;
   color: $color-dark;
   transition: opacity 300ms ease;
-  &.category {
+  &.category_old {
     background-color: $color-accent;
     color: readable-color($color-accent);
     padding-inline: 5px;
   }
-  &.subcategory {
+  &.subcategory_old {
     background-color: $color-success;
     color: readable-color($color-success);
   }
@@ -52,6 +50,7 @@ section {
   vertical-align: text-top;
 }
 .container {
+  //width: min($container-width, 100%);
   max-width: $container-width;
   margin: 0 auto;
   padding-inline: $gap-default;
@@ -64,7 +63,7 @@ section {
   &-2 {
     grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: $tab) {
+  @include tab {
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
   }
 
@@ -131,7 +130,7 @@ details {
 .tab > label {
   display: block;
   margin-bottom: -1px;
-  padding: $gap-default;
+  padding: calc($gap-default/2) $gap-default;
   border: 1px solid $color-primary;
   background: $color-light;
   color: readable-color($color-light);
@@ -168,4 +167,33 @@ details {
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4) {
   display: block;
+}
+
+a.category {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  color: $color-dark; // Text color
+  text-decoration: none;
+  background-image: linear-gradient(
+    $color-accent 0%,
+    $color-accent 100%
+  ); // Solid background color
+  background-size: 100% 20%; // Initial underline size
+  background-position: 0 100%; // Position at the bottom
+  background-repeat: no-repeat;
+  transition: all 0.2s ease;
+  &-light {
+    color: $color-light;
+  }
+  &-sub {
+    background-image: linear-gradient($color-success 0%, $color-success 100%);
+    &:hover {
+      color: readable-color($color-success);
+    }
+  }
+  &:hover {
+    background-size: 100% 100%; // Expand to full background height on hover
+    color: readable-color($color-accent);
+  }
 }

@@ -93,6 +93,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.column {
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
